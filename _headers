@@ -1,0 +1,4 @@
+# Keep the pages.dev demo out of Google so it doesn't compete with the shop's
+# current site. The real domain is not affected and will index normally.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
