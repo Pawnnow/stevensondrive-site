@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pawn Shop in Springfield, IL | Stevenson Drive Pawn Shop</title>
+<meta name="description" content="Stevenson Drive Pawn Shop in Springfield, IL: pawn loans, cash for gold, jewelry and firearms, and in-store jewelry repair. 2223 Adlai Stevenson Dr. Call (217) 414-0909.">
+<!-- CONFIRM: final domain. Using the shop's current domain until the new site replaces it. -->
+<link rel="canonical" href="https://stevensondrivepawnandjewelry.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stevenson Drive Pawn Shop | Springfield, IL">
+<meta property="og:description" content="Pawn loans, cash offers, firearms, and in-store jewelry repair on Adlai Stevenson Drive.">
+<meta property="og:image" content="logo.png">
+<link rel="icon" type="image/png" href="logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ===== SCHEMA: business details. CONFIRM hours before launch. ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["PawnShop", "JewelryStore"],
+  "name": "Stevenson Drive Pawn Shop",
+  "url": "https://stevensondrivepawnandjewelry.com/",
+  "logo": "https://stevensondrivepawnandjewelry.com/logo.png",
+  "telephone": "+1-217-414-0909",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2223 Adlai Stevenson Dr",
+    "addressLocality": "Springfield",
+    "addressRegion": "IL",
+    "postalCode": "62703",
+    "addressCountry": "US"
+  },
+  "areaServed": ["Springfield IL", "Sangamon County IL"],
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "19:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "16:00"}
+  ]
+}
+</script>
+
+<style>
+/* ===== DESIGN TOKENS (change these per client) ===== */
+:root{
+  --blue:#3853a4;        /* logo blue */
+  --blue-deep:#22336b;   /* footer, hover */
+  --red:#ed1e24;         /* logo red */
+  --red-deep:#c8141a;
+  --ink:#1b2440;         /* body text */
+  --muted:#4d5672;
+  --surface:#f1f4fa;     /* light blue-grey section */
+  --line:#d6dcea;
+  --white:#ffffff;
+  --head:'Zilla Slab', Georgia, serif;
+  --body:'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --wrap:1180px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;font-family:var(--body);font-size:17px;line-height:1.6;color:var(--ink);background:var(--white)}
+img{max-width:100%;display:block}
+a{color:var(--blue)}
+h1,h2,h3{font-family:var(--head);font-weight:700;line-height:1.1;margin:0 0 .5em;color:var(--ink)}
+h1{font-size:clamp(38px,5.4vw,64px);letter-spacing:-.01em}
+h2{font-size:clamp(30px,3.6vw,44px)}
+h3{font-size:24px}
+p{margin:0 0 1em}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+.skip{position:absolute;left:-999px;top:0;background:var(--white);padding:10px 16px;z-index:100}
+.skip:focus{left:12px;top:12px}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+section{padding:88px 0}
+.lede{font-size:19px;color:var(--muted);max-width:60ch}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-weight:700;font-size:16px;text-decoration:none;padding:15px 26px;border-radius:6px;border:2px solid transparent;cursor:pointer;transition:background .15s,color .15s}
+.btn-red{background:var(--red);color:var(--white)}
+.btn-red:hover{background:var(--red-deep)}
+.btn-line{border-color:var(--blue);color:var(--blue);background:transparent}
+.btn-line:hover{background:var(--blue);color:var(--white)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* ===== SHARED HEADER START ===== */
+.topbar{background:var(--blue);color:var(--white);font-size:14px}
+.topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+.topbar a{color:var(--white);text-decoration:none}
+.topbar a:hover{text-decoration:underline}
+.topbar span{opacity:.92}
+header.site{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:92px}
+.brand img{height:74px;width:auto}
+.mainnav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;align-items:center}
+.mainnav a{display:block;padding:10px 12px;font-weight:600;font-size:15px;color:var(--ink);text-decoration:none;border-radius:4px}
+.mainnav a:hover,.mainnav a[aria-current="page"]{color:var(--blue);background:var(--surface)}
+.mainnav .btn{margin-left:10px;padding:11px 18px;font-size:15px}
+.mainnav .btn:hover{background:var(--red-deep);color:var(--white)}
+.burger{display:none;background:none;border:2px solid var(--blue);border-radius:6px;width:48px;height:44px;cursor:pointer;padding:0;align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:22px;height:2.5px;background:var(--blue);position:relative;content:""}
+.burger span::before{position:absolute;top:-7px}
+.burger span::after{position:absolute;top:7px}
+.mobile-nav{display:none}
+@media (max-width:980px){
+  .mainnav{display:none}
+  .burger{display:inline-flex}
+  header.site .wrap{height:76px}
+  .brand img{height:58px}
+  .mobile-nav{position:fixed;inset:0;background:var(--white);z-index:60;padding:24px;overflow-y:auto}
+  .mobile-nav.open{display:block}
+  .mobile-nav .mn-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+  .mobile-nav ul{list-style:none;margin:0;padding:0}
+  .mobile-nav li a{display:block;padding:16px 4px;font-family:var(--head);font-size:26px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+  .mobile-nav .btn{margin-top:24px;width:100%;justify-content:center}
+  .mn-close{background:none;border:2px solid var(--blue);color:var(--blue);border-radius:6px;font-size:28px;line-height:1;width:48px;height:44px;cursor:pointer}
+}
+@media (max-width:640px){.topbar .hide-sm{display:none}.topbar{font-size:13px}.topbar .wrap{flex-wrap:nowrap}}
+/* ===== SHARED HEADER END ===== */
+
+/* Hero */
+.hero{padding:72px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{margin-bottom:22px}
+.hero .lede{margin-bottom:30px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-photo{
+  aspect-ratio:4/3;border-radius:10px;position:relative;overflow:hidden;
+  /* exterior.jpg shows when uploaded; the blue star panel shows until then */
+  background:url("exterior.jpg") center/cover no-repeat, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' fill-opacity='.18' d='M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3l-6.4 3.6 1.5-7.1L1.7 8.9l7.2-.8z'/%3E%3C/svg%3E") center/42% no-repeat, var(--blue);
+  box-shadow:14px 14px 0 var(--red);
+}
+.hero-photo .addr-tag{position:absolute;left:0;bottom:0;background:var(--white);color:var(--ink);font-weight:600;font-size:14px;padding:10px 16px;border-top-right-radius:8px;z-index:1}
+@media (max-width:900px){
+  .hero{padding:44px 0 64px}
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .hero-photo{box-shadow:10px 10px 0 var(--red);margin-right:10px}
+}
+
+/* Ribbon band — echoes the "We Are Better" banner in the logo */
+.ribbon{background:var(--red);color:var(--white);padding:22px 0}
+.ribbon ul{list-style:none;margin:0;padding:0;display:flex;justify-content:center;flex-wrap:wrap;gap:12px 40px}
+.ribbon li{font-family:var(--head);font-size:clamp(20px,2.2vw,26px);font-weight:700;display:flex;align-items:center;gap:14px}
+.ribbon svg{width:18px;height:18px;fill:var(--white);flex:none}
+
+/* Jewelry repair feature */
+.feature .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.feature-photo{aspect-ratio:4/3;border-radius:10px;background:url("jewelry-repair.jpg") center/cover no-repeat, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233853a4' stroke-opacity='.35' stroke-width='1.2'%3E%3Ccircle cx='12' cy='15' r='6.5'/%3E%3Cpath d='M9 6.5l3-3.5 3 3.5-3 2.5z'/%3E%3C/svg%3E") center/34% no-repeat, linear-gradient(135deg,#eef1f9,#d5ddef)}
+.feature ul.ticks{list-style:none;padding:0;margin:0 0 28px;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
+.feature ul.ticks li{padding-left:26px;position:relative}
+.feature ul.ticks li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;background:var(--red);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+@media (max-width:900px){.feature .wrap{grid-template-columns:1fr;gap:36px}}
+@media (max-width:480px){.feature ul.ticks{grid-template-columns:1fr}}
+
+/* Three services */
+.services{background:var(--surface)}
+.services h2{max-width:20ch}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}
+.svc{background:var(--white);border-top:5px solid var(--blue);padding:30px 28px 28px;display:flex;flex-direction:column}
+.svc p{color:var(--muted);flex:1}
+.svc a.more{font-weight:700;text-decoration:none}
+.svc a.more:hover{text-decoration:underline}
+@media (max-width:900px){.svc-grid{grid-template-columns:1fr}}
+
+/* Steps (a real sequence, so numbered) */
+.steps ol{list-style:none;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding-top:74px}
+.steps li::before{content:counter(s);position:absolute;top:0;left:0;font-family:var(--head);font-weight:700;font-size:64px;line-height:1;color:var(--blue)}
+.steps li p{color:var(--muted)}
+@media (max-width:800px){.steps ol{grid-template-columns:1fr;gap:28px}}
+
+/* What we buy */
+.buy{background:var(--surface)}
+.buy-list{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.buy-list a,.buy-list span{display:block;background:var(--white);border:1px solid var(--line);border-left:4px solid var(--red);padding:18px 18px;font-weight:600;color:var(--ink);text-decoration:none;height:100%}
+.buy-list a:hover{border-color:var(--blue);border-left-color:var(--red);color:var(--blue)}
+@media (max-width:900px){.buy-list{grid-template-columns:repeat(2,1fr)}}
+
+/* Quote form */
+.quote{background:var(--blue);color:var(--white)}
+.quote .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.quote h2,.quote .lede{color:var(--white)}
+.quote .lede{opacity:.92}
+.quote .call-alt{margin-top:28px;font-size:17px}
+.quote .call-alt a{color:var(--white);font-weight:700;font-size:22px;font-family:var(--head)}
+.qform{background:var(--white);color:var(--ink);border-radius:10px;padding:34px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fg{margin-bottom:18px}
+.fg label,.fg legend{display:block;font-weight:600;font-size:15px;margin-bottom:6px}
+.fg .opt{font-weight:400;color:var(--muted)}
+.fi,.fs,.fta{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--white);border:1.5px solid #b9c2d9;border-radius:6px;padding:12px 14px}
+.fi:focus,.fs:focus,.fta:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(56,83,164,.25)}
+.fta{min-height:120px;resize:vertical}
+fieldset.fg{border:0;padding:0;margin:0 0 18px}
+.radios{display:flex;gap:22px;flex-wrap:wrap}
+.radios label{font-weight:500;display:flex;align-items:center;gap:8px;margin:0}
+.radios input{width:18px;height:18px;accent-color:var(--blue)}
+.hp{position:absolute;left:-5000px}
+.qform .btn{width:100%;justify-content:center;font-size:17px;padding:17px}
+.form-note{font-size:14px;color:var(--muted);margin:14px 0 0}
+.form-status{margin-top:16px;padding:14px 16px;border-radius:6px;font-weight:600;display:none}
+.form-status.ok{display:block;background:#e7f4ea;color:#1d5b2c}
+.form-status.err{display:block;background:#fdeaea;color:#8d1216}
+@media (max-width:900px){.quote .wrap{grid-template-columns:1fr;gap:36px}}
+@media (max-width:520px){.frow{grid-template-columns:1fr;gap:0}.qform{padding:24px}}
+
+/* FAQ */
+.faq .wrap{max-width:860px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;font-family:var(--head);font-size:22px;font-weight:700}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:6px;top:16px;font-size:32px;color:var(--red);font-family:var(--body);font-weight:400}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{color:var(--muted);padding-bottom:20px;max-width:68ch}
+
+/* Visit */
+.visit{background:var(--surface);padding-bottom:0}
+.visit .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;padding-bottom:88px}
+.hours{width:100%;border-collapse:collapse;margin:8px 0 28px;max-width:380px}
+.hours th,.hours td{text-align:left;padding:9px 0;border-bottom:1px solid var(--line);font-weight:500}
+.hours th{font-weight:600}
+.visit address{font-style:normal;font-size:19px;margin-bottom:18px}
+.map{border:0;width:100%;height:100%;min-height:380px;border-radius:10px}
+@media (max-width:900px){.visit .wrap{grid-template-columns:1fr}}
+
+/* ===== SHARED FOOTER START ===== */
+footer.site{background:var(--blue-deep);color:#dbe1f1;padding:64px 0 28px;font-size:15px}
+footer.site .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px}
+footer.site .flogo{background:var(--white);border-radius:8px;padding:10px;display:inline-block}
+footer.site .flogo img{height:86px;width:auto}
+footer.site h3{font-family:var(--body);font-size:15px;font-weight:700;color:var(--white);margin:0 0 14px;letter-spacing:.02em}
+footer.site ul{list-style:none;margin:0;padding:0}
+footer.site li{margin-bottom:8px}
+footer.site a{color:#dbe1f1;text-decoration:none}
+footer.site a:hover{color:var(--white);text-decoration:underline}
+footer.site .legal{border-top:1px solid rgba(255,255,255,.18);margin-top:44px;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:#b4bedb}
+@media (max-width:900px){footer.site .cols{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){footer.site .cols{grid-template-columns:1fr}}
+/* ===== SHARED FOOTER END ===== */
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<!-- ===== SHARED HEADER START (copy this block to every page) ===== -->
+<div class="topbar">
+  <div class="wrap">
+    <a href="https://www.google.com/maps/search/?api=1&query=2223+Adlai+Stevenson+Dr+Springfield+IL+62703" target="_blank" rel="noopener">2223 Adlai Stevenson Dr<span class="hide-sm">, Springfield, IL</span></a>
+    <!-- CONFIRM hours -->
+    <span class="hide-sm">Mon–Fri 9–7, Sat 9–4, Sun closed</span>
+    <a href="tel:+12174140909">(217) 414-0909</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Stevenson Drive Pawn Shop home">
+      <img src="logo.webp" alt="Stevenson Drive Pawn Shop logo" width="900" height="449">
+    </a>
+    <nav class="mainnav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="pawn-loans.html">Pawn Loans</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="firearms.html">Firearms</a></li>
+        <li><a href="jewelry-repair.html">Jewelry Repair</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="btn btn-red" href="#quote">Get a quote</a></li>
+      </ul>
+    </nav>
+    <button class="burger" type="button" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="mn-top">
+    <img src="logo.webp" alt="" width="120" height="60" style="height:56px;width:auto">
+    <button class="mn-close" type="button" aria-label="Close menu">&times;</button>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pawn-loans.html">Pawn Loans</a></li>
+    <li><a href="sell.html">Sell</a></li>
+    <li><a href="firearms.html">Firearms</a></li>
+    <li><a href="jewelry-repair.html">Jewelry Repair</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a class="btn btn-red" href="tel:+12174140909">Call (217) 414-0909</a>
+</div>
+<!-- ===== SHARED HEADER END ===== -->
+
+<main id="main">
+
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div>
+      <h1 id="h1">Pawn, sell, and repair jewelry in Springfield, Illinois</h1>
+      <p class="lede">Stevenson Drive Pawn Shop makes loans on your valuables, pays cash for gold, firearms, tools and electronics, and fixes jewelry right here in the store.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-red" href="#quote">Get a free quote</a>
+        <a class="btn btn-line" href="tel:+12174140909">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Call (217) 414-0909
+        </a>
+      </div>
+    </div>
+    <!-- Upload exterior.jpg to the repo and it appears here automatically -->
+    <div class="hero-photo" role="img" aria-label="Stevenson Drive Pawn Shop storefront on Adlai Stevenson Drive">
+      <span class="addr-tag">2223 Adlai Stevenson Dr</span>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon" role="region" aria-label="What we offer">
+  <ul>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3l-6.4 3.6 1.5-7.1L1.7 8.9l7.2-.8z"/></svg>Loans on your valuables</li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3l-6.4 3.6 1.5-7.1L1.7 8.9l7.2-.8z"/></svg>Cash for what you sell</li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3l-6.4 3.6 1.5-7.1L1.7 8.9l7.2-.8z"/></svg>Jewelry repair in the store</li>
+  </ul>
+</div>
+
+<section class="feature" aria-labelledby="jr-h">
+  <div class="wrap">
+    <!-- Upload jewelry-repair.jpg (repair bench or work in progress) -->
+    <div class="feature-photo" role="img" aria-label="Jewelry repair at Stevenson Drive Pawn Shop"></div>
+    <div>
+      <h2 id="jr-h">Jewelry repair, done here in Springfield</h2>
+      <p class="lede">You don't have to mail your ring away or wait weeks. Bring it in, talk to the person doing the work, and pick it up from the same counter.</p>
+      <!-- CONFIRM the repair services they actually offer -->
+      <ul class="ticks">
+        <li>Ring sizing</li>
+        <li>Chain and clasp repair</li>
+        <li>Soldering</li>
+        <li>Prong and stone work</li>
+        <li>Cleaning and polishing</li>
+        <li>Watch batteries</li>
+      </ul>
+      <a class="btn btn-line" href="jewelry-repair.html">See jewelry repair services</a>
+    </div>
+  </div>
+</section>
+
+<section class="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <h2 id="svc-h">Three ways to turn what you own into cash</h2>
+    <div class="svc-grid">
+      <article class="svc">
+        <h3>Pawn loans</h3>
+        <p>Borrow against an item and keep ownership. Pay the loan back and your item comes home. No credit check.</p>
+        <a class="more" href="pawn-loans.html">How pawn loans work</a>
+      </article>
+      <article class="svc">
+        <h3>Sell to us</h3>
+        <p>Gold, jewelry, coins, tools, electronics and more. We look it over, make an offer, and pay you the same visit.</p>
+        <a class="more" href="sell.html">What we buy</a>
+      </article>
+      <article class="svc">
+        <h3>Firearms</h3>
+        <p>Buy, sell, or pawn handguns, rifles and shotguns with a licensed dealer. A valid Illinois FOID card is required.</p>
+        <a class="more" href="firearms.html">Firearms at Stevenson Drive</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="steps" aria-labelledby="st-h">
+  <div class="wrap">
+    <h2 id="st-h">How a pawn loan works</h2>
+    <ol>
+      <li><h3>Bring in your item</h3><p>Stop by the store with the item and a valid photo ID. Chargers, cases and paperwork help.</p></li>
+      <li><h3>Get an offer</h3><p>We look it over and tell you what we can loan or pay. You decide, with no pressure either way.</p></li>
+      <li><h3>Leave with cash</h3><p>Take the money the same visit. Repay your loan on time and pick your item back up.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="buy" aria-labelledby="buy-h">
+  <div class="wrap">
+    <h2 id="buy-h">What we buy and loan on</h2>
+    <p class="lede">Not sure if we'll take it? Send a quote request or give us a call.</p>
+    <!-- CONFIRM categories with the client -->
+    <ul class="buy-list">
+      <li><a href="sell.html#gold">Gold and silver</a></li>
+      <li><a href="sell.html#jewelry">Jewelry and diamonds</a></li>
+      <li><a href="sell.html#coins">Coins and bullion</a></li>
+      <li><a href="firearms.html">Firearms</a></li>
+      <li><a href="sell.html#tools">Power tools</a></li>
+      <li><a href="sell.html#electronics">Electronics</a></li>
+      <li><a href="sell.html#games">Game consoles</a></li>
+      <li><a href="sell.html#instruments">Musical instruments</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="quote" id="quote" aria-labelledby="q-h">
+  <div class="wrap">
+    <div>
+      <h2 id="q-h">Request a free quote</h2>
+      <p class="lede">Tell us what you have and how to reach you. We'll get back to you with an offer, and there's no obligation to accept it.</p>
+      <p class="call-alt">Rather talk to someone?<br><a href="tel:+12174140909">(217) 414-0909</a></p>
+    </div>
+
+    <!--
+      FORM SETUP: create a free Web3Forms key with the shop's email
+      (web3forms.com), then replace YOUR-WEB3FORMS-KEY below.
+      Until then the form shows a demo message instead of sending.
+    -->
+    <form class="qform" id="quote-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <input type="hidden" name="access_key" value="YOUR-WEB3FORMS-KEY">
+      <input type="hidden" name="subject" value="New quote request from the website">
+      <input type="hidden" name="from_name" value="Stevenson Drive Pawn website">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="frow">
+        <div class="fg"><label for="q-name">Your name</label><input class="fi" id="q-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="fg"><label for="q-phone">Phone</label><input class="fi" id="q-phone" name="phone" type="tel" autocomplete="tel" required></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label for="q-email">Email <span class="opt">(optional)</span></label><input class="fi" id="q-email" name="email" type="email" autocomplete="email"></div>
+        <div class="fg"><label for="q-intent">I want to</label>
+          <select class="fs" id="q-intent" name="interest" required>
+            <option value="">Choose one</option>
+            <option>Pawn an item</option>
+            <option>Sell an item</option>
+            <option>Sell or pawn a firearm</option>
+            <option>Get jewelry repaired</option>
+            <option>Ask about something else</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg"><label for="q-desc">Tell us about the item</label><textarea class="fta" id="q-desc" name="item_description" placeholder="Brand, model, size or karat, condition, and anything included" required></textarea></div>
+      <fieldset class="fg">
+        <legend>Best way to reach you</legend>
+        <div class="radios">
+          <label><input type="radio" name="contact_by" value="Call" checked> Call</label>
+          <label><input type="radio" name="contact_by" value="Text"> Text</label>
+          <label><input type="radio" name="contact_by" value="Email"> Email</label>
+        </div>
+      </fieldset>
+      <button class="btn btn-red" type="submit">Send my quote request</button>
+      <p class="form-note">Firearms can't be bought or sold online. We'll set up a time to see it in the store.</p>
+      <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<section class="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <h2 id="faq-h">Questions people ask us</h2>
+    <!-- CONFIRM: answers on loan terms should match the shop's real terms -->
+    <details>
+      <summary>How does a pawn loan work in Springfield, IL?</summary>
+      <p>You bring in an item of value and we loan you money against it. We hold the item while the loan is open. When you repay the loan plus the finance charge, you get your item back. If you choose not to repay, the item becomes ours and you owe nothing more.</p>
+    </details>
+    <details>
+      <summary>What do I need to bring?</summary>
+      <p>Bring the item and a valid government-issued photo ID. For firearms, Illinois law also requires a valid FOID card. Chargers, cases, boxes and paperwork can raise what we're able to offer.</p>
+    </details>
+    <details>
+      <summary>Does a pawn loan affect my credit?</summary>
+      <p>No. We don't run a credit check, and the loan is secured by your item, so nothing is reported to credit bureaus.</p>
+    </details>
+    <details>
+      <summary>Can I sell or pawn a gun at Stevenson Drive Pawn Shop?</summary>
+      <p>Yes. We're a licensed firearms dealer and we buy, sell and loan on handguns, rifles and shotguns. You'll need a valid photo ID and an Illinois FOID card. Please bring firearms in unloaded and cased.</p>
+    </details>
+    <details>
+      <summary>Do you repair jewelry in the store?</summary>
+      <p>Yes. Ring sizing, chain repair, soldering and other repairs are done here at the store, so your jewelry doesn't get shipped out. Bring it in for a quote.</p>
+    </details>
+    <details>
+      <summary>Do I need an appointment?</summary>
+      <p>No. Walk in any time during business hours. If you'd like an idea of value first, send a quote request or call (217) 414-0909.</p>
+    </details>
+  </div>
+</section>
+
+<section class="visit" aria-labelledby="v-h">
+  <div class="wrap">
+    <div>
+      <h2 id="v-h">Visit the store</h2>
+      <address>2223 Adlai Stevenson Dr<br>Springfield, IL 62703</address>
+      <!-- CONFIRM hours -->
+      <table class="hours">
+        <caption class="sr-only">Store hours</caption>
+        <tr><th scope="row">Monday – Friday</th><td>9:00 am – 7:00 pm</td></tr>
+        <tr><th scope="row">Saturday</th><td>9:00 am – 4:00 pm</td></tr>
+        <tr><th scope="row">Sunday</th><td>Closed</td></tr>
+      </table>
+      <div class="hero-ctas">
+        <a class="btn btn-red" href="https://www.google.com/maps/dir/?api=1&destination=2223+Adlai+Stevenson+Dr+Springfield+IL+62703" target="_blank" rel="noopener">Get directions</a>
+        <a class="btn btn-line" href="tel:+12174140909">Call the store</a>
+      </div>
+    </div>
+    <iframe class="map" title="Map to Stevenson Drive Pawn Shop" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps?q=2223+Adlai+Stevenson+Dr,+Springfield,+IL+62703&output=embed"></iframe>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== SHARED FOOTER START (copy this block to every page) ===== -->
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="flogo" href="index.html"><img src="logo.webp" alt="Stevenson Drive Pawn Shop" width="900" height="449"></a>
+        <p style="margin-top:18px">2223 Adlai Stevenson Dr<br>Springfield, IL 62703<br><a href="tel:+12174140909">(217) 414-0909</a></p>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="pawn-loans.html">Pawn loans</a></li>
+          <li><a href="sell.html">Sell to us</a></li>
+          <li><a href="firearms.html">Firearms</a></li>
+          <li><a href="jewelry-repair.html">Jewelry repair</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#quote">Get a quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Hours</h3>
+        <!-- CONFIRM hours -->
+        <ul>
+          <li>Mon–Fri 9 am – 7 pm</li>
+          <li>Sat 9 am – 4 pm</li>
+          <li>Sun closed</li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <!-- CONFIRM FFL number against the license before launch -->
+      <span>&copy; <span id="yr">2026</span> Stevenson Drive Pawn Shop. Licensed firearms dealer, FFL #3-37-167-02-7D-05848.</span>
+      <span>Site by <a href="https://pawngorillas.com" target="_blank" rel="noopener">Pawn Gorillas</a></span>
+    </div>
+  </div>
+</footer>
+<!-- ===== SHARED FOOTER END ===== -->
+
+<!-- FAQ schema (keep in sync with the FAQ text above) -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How does a pawn loan work in Springfield, IL?","acceptedAnswer":{"@type":"Answer","text":"You bring in an item of value and we loan you money against it. We hold the item while the loan is open. When you repay the loan plus the finance charge, you get your item back. If you choose not to repay, the item becomes ours and you owe nothing more."}},
+    {"@type":"Question","name":"What do I need to bring?","acceptedAnswer":{"@type":"Answer","text":"Bring the item and a valid government-issued photo ID. For firearms, Illinois law also requires a valid FOID card. Chargers, cases, boxes and paperwork can raise what we're able to offer."}},
+    {"@type":"Question","name":"Does a pawn loan affect my credit?","acceptedAnswer":{"@type":"Answer","text":"No. We don't run a credit check, and the loan is secured by your item, so nothing is reported to credit bureaus."}},
+    {"@type":"Question","name":"Can I sell or pawn a gun at Stevenson Drive Pawn Shop?","acceptedAnswer":{"@type":"Answer","text":"Yes. We're a licensed firearms dealer and we buy, sell and loan on handguns, rifles and shotguns. You'll need a valid photo ID and an Illinois FOID card. Please bring firearms in unloaded and cased."}},
+    {"@type":"Question","name":"Do you repair jewelry in the store?","acceptedAnswer":{"@type":"Answer","text":"Yes. Ring sizing, chain repair, soldering and other repairs are done here at the store, so your jewelry doesn't get shipped out. Bring it in for a quote."}},
+    {"@type":"Question","name":"Do I need an appointment?","acceptedAnswer":{"@type":"Answer","text":"No. Walk in any time during business hours. If you'd like an idea of value first, send a quote request or call (217) 414-0909."}}
+  ]
+}
+</script>
+
+<script>
+// Mobile menu
+(function(){
+  var nav=document.getElementById('mobile-nav'),
+      openBtn=document.querySelector('.burger'),
+      closeBtn=nav.querySelector('.mn-close');
+  function setOpen(o){
+    nav.classList.toggle('open',o);
+    openBtn.setAttribute('aria-expanded',o);
+    document.body.style.overflow=o?'hidden':'';
+    (o?closeBtn:openBtn).focus();
+  }
+  openBtn.addEventListener('click',function(){setOpen(true)});
+  closeBtn.addEventListener('click',function(){setOpen(false)});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A')setOpen(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open'))setOpen(false)});
+})();
+
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+// Quote form
+(function(){
+  var form=document.getElementById('quote-form'),
+      status=document.getElementById('form-status'),
+      btn=form.querySelector('button[type=submit]');
+  function show(msg,ok){status.textContent=msg;status.className='form-status '+(ok?'ok':'err')}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var missing=Array.prototype.filter.call(form.querySelectorAll('[required]'),function(f){return !f.value.trim()});
+    if(missing.length){show('Please fill in your name, phone, what you want to do, and a short description of the item.',false);missing[0].focus();return}
+    if(form.access_key.value==='YOUR-WEB3FORMS-KEY'){show('Demo mode: this form is not connected yet. Call (217) 414-0909 for a quote.',true);return}
+    btn.disabled=true;btn.textContent='Sending…';
+    fetch(form.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)})
+      .then(function(r){return r.json()})
+      .then(function(d){
+        if(d.success){form.reset();show('Thanks, your quote request was sent. We\u2019ll be in touch soon.',true)}
+        else{show('Your request didn\u2019t go through. Please call (217) 414-0909.',false)}
+      })
+      .catch(function(){show('Your request didn\u2019t go through. Please call (217) 414-0909.',false)})
+      .finally(function(){btn.disabled=false;btn.textContent='Send my quote request'});
+  });
+})();
+</script>
+</body>
+</html>
