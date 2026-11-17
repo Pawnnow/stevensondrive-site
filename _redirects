@@ -1,0 +1,4 @@
+# Short review link: yoursite/review -> Google review box.
+# PLACEHOLDER: this opens their Google Maps listing for now.
+# Replace the URL with the "Ask for reviews" link from their Google Business Profile.
+/review  https://maps.google.com/?cid=6891771936703376634  302

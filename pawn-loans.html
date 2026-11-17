@@ -111,7 +111,7 @@
         <li><a href="jewelry-repair.html">Jewelry Repair</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a class="btn btn-red" href="contact.html#quote">Get a quote</a></li>
+        <li><a class="btn btn-red" href="#quote">Get a quote</a></li>
       </ul>
     </nav>
     <button class="burger" type="button" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false"><span></span></button>
@@ -143,7 +143,7 @@
       <h1 id="h1">Pawn loans in Springfield, IL</h1>
       <p class="lede">Borrow against something you own and keep the option to get it back. No credit check, a decision while you wait, and cash the same visit.</p>
       <div class="hero-ctas">
-        <a class="btn btn-red" href="contact.html#quote">Get a free quote</a>
+        <a class="btn btn-red" href="#quote">Get a free quote</a>
         <a class="btn btn-line" href="tel:+12174140909">Call (217) 414-0909</a>
       </div>
     </div>
@@ -220,13 +220,54 @@
   </div>
 </section>
 
-<section class="cta-band" aria-label="Get a quote">
+<section class="quote" id="quote" aria-labelledby="q-h">
   <div class="wrap">
-    <div><h2>Find out what you can borrow</h2><p>Send a few details about your item and we'll get back to you with a loan offer.</p></div>
-    <div class="acts">
-      <a class="btn btn-white" href="contact.html#quote">Get a free quote</a>
-      <a class="btn btn-ghost" href="tel:+12174140909">Call (217) 414-0909</a>
+    <div>
+      <h2 id="q-h">Find out what you can borrow</h2>
+      <p class="lede">Send a few details about your item and we'll get back to you with a loan offer. No obligation to accept it.</p>
+      <p class="call-alt">Rather talk to someone?<br><a href="tel:+12174140909">(217) 414-0909</a></p>
     </div>
+    <!--
+      FORM SETUP: create a free Web3Forms key with the shop's email
+      (web3forms.com). CONNECTED: key below sends to the email on the Web3Forms account.
+      Until then the form shows a demo message instead of sending.
+    -->
+    <form class="qform" id="quote-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <input type="hidden" name="access_key" value="ba65331e-3c67-4ce6-aea2-89016c3157da">
+      <input type="hidden" name="subject" value="New quote request from the website">
+      <input type="hidden" name="page" value="pawn-loans.html">
+      <input type="hidden" name="from_name" value="Stevenson Drive Pawn website">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="frow">
+        <div class="fg"><label for="q-name">Your name</label><input class="fi" id="q-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="fg"><label for="q-phone">Phone</label><input class="fi" id="q-phone" name="phone" type="tel" autocomplete="tel" required></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label for="q-email">Email <span class="opt">(optional)</span></label><input class="fi" id="q-email" name="email" type="email" autocomplete="email"></div>
+        <div class="fg"><label for="q-intent">I want to</label>
+          <select class="fs" id="q-intent" name="interest" required>
+            <option value="">Choose one</option>
+            <option selected>Pawn an item</option>
+            <option>Sell an item</option>
+            <option>Sell or pawn a firearm</option>
+            <option>Get jewelry repaired</option>
+            <option>Ask about something else</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg"><label for="q-desc">Tell us about the item</label><textarea class="fta" id="q-desc" name="item_description" placeholder="Brand, model, size or karat, condition, and anything included" required></textarea></div>
+      <fieldset class="fg">
+        <legend>Best way to reach you</legend>
+        <div class="radios">
+          <label><input type="radio" name="contact_by" value="Call" checked> Call</label>
+          <label><input type="radio" name="contact_by" value="Text"> Text</label>
+          <label><input type="radio" name="contact_by" value="Email"> Email</label>
+        </div>
+      </fieldset>
+      <button class="btn btn-red" type="submit">Send my quote request</button>
+      <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+    </form>
   </div>
 </section>
 </main>
@@ -238,6 +279,7 @@
       <div>
         <a class="flogo" href="index.html"><img src="logo.webp" alt="Stevenson Drive Pawn Shop" width="900" height="449"></a>
         <p style="margin-top:18px">2223 Adlai Stevenson Dr<br>Springfield, IL 62703<br><a href="tel:+12174140909">(217) 414-0909</a></p>
+        <a class="btn-review" href="/review" target="_blank" rel="noopener">&#9733; Review us on Google</a>
       </div>
       <div>
         <h3>Services</h3>
@@ -254,7 +296,7 @@
           <li><a href="about.html">About us</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="contact.html#quote">Get a quote</a></li>
+          <li><a href="#quote">Get a quote</a></li>
         </ul>
       </div>
       <div>

@@ -253,3 +253,18 @@ footer.site .legal{border-top:1px solid rgba(255,255,255,.18);margin-top:44px;pa
 .contact-cards .svc a{font-weight:700}
 @media (max-width:900px){.contact-cards{grid-template-columns:1fr}}
 @media (max-width:900px){.photo.ph-empty{display:none}}
+
+/* ===== REVIEWS ===== */
+.reviews{background:var(--white)}
+.rv-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+.rv-head h2{margin:0}
+.rv-links{display:flex;gap:12px;flex-wrap:wrap}
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.rev{margin:0;padding:28px;border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column}
+.rev .stars{color:var(--red);font-size:20px;letter-spacing:3px;margin:0 0 12px}
+.rev blockquote{margin:0 0 18px;flex:1;font-size:17px}
+.rev blockquote p{margin:0}
+.rev figcaption{font-weight:700;color:var(--blue)}
+@media (max-width:900px){.rv-grid{grid-template-columns:1fr}}
+.btn-review{display:inline-block;margin-top:6px;padding:10px 16px;border:1.5px solid rgba(255,255,255,.55);border-radius:6px;color:var(--white)!important;font-weight:600;text-decoration:none!important}
+.btn-review:hover{background:rgba(255,255,255,.1)}
